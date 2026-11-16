@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MO Estudio · Marketing, Comunicación y Eventos</title>
+<meta name="description" content="MO Estudio: marketing, comunicación y eventos. Cercanía con criterio.">
+<!-- Web en construcción: se retira el noindex al publicar la versión final -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: mucho aire. Las fotos van enmarcadas y separadas, nunca pegadas entre sí; cada sección respira con su propio fondo. */
+:root{
+  --navy:#1B2A41;
+  --navy-90:rgba(27,42,65,.92);
+  --ivory:#FBF8F1;
+  --white:#FFFFFF;
+  --red:#7A1F2B;
+  --green:#2F4538;
+  --muted:#4B5567;
+  --soft:#C6CBD4;
+  --line:rgba(27,42,65,.14);
+  --line-light:rgba(251,248,241,.22);
+  --f-display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --f-body:'Jost','Helvetica Neue',Arial,sans-serif;
+  --wrap:1240px;
+  --gut-l:max(20px, env(safe-area-inset-left, 0px));
+  --gut-r:max(20px, env(safe-area-inset-right, 0px));
+  --space:clamp(88px, 11vw, 150px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--navy);font-family:var(--f-body);font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--navy)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{text-wrap:balance}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.eyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+section[id]{scroll-margin-top:calc(72px + env(safe-area-inset-top,0px))}
+
+/* Botones */
+.pill{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 28px;border-radius:999px;font-family:var(--f-body);font-size:15px;letter-spacing:.06em;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .3s,background .3s,color .3s,border-color .3s}
+.pill:hover{transform:translateY(-2px)}
+.p-red{background:var(--red);color:var(--ivory)}.p-red:hover{background:var(--ivory);color:var(--red)}
+.p-navy{background:var(--navy);color:var(--ivory)}.p-navy:hover{background:var(--red)}
+.p-line{background:transparent;color:var(--ivory);border-color:rgba(251,248,241,.7)}.p-line:hover{background:var(--ivory);color:var(--green)}
+.arr{transition:transform .3s}.pill:hover .arr{transform:translateX(5px)}
+
+/* Cabecera */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--navy-90);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--ivory)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ivory)}
+.mo{font-family:var(--f-display);font-weight:500;line-height:1}
+.mo span{color:var(--red)}
+.logo .mo{font-size:32px}
+.logo .sep{width:1px;height:20px;background:rgba(251,248,241,.35)}
+.est{font-size:11px;letter-spacing:.42em}
+.nav{display:flex;align-items:center;gap:36px}
+.nl{color:var(--ivory);text-decoration:none;font-size:13px;letter-spacing:.2em;padding:12px 0;opacity:.85;position:relative;transition:opacity .3s}
+.nl::after{content:"";position:absolute;left:0;right:100%;bottom:6px;height:2px;background:var(--red);transition:right .35s}
+.nl:hover{opacity:1}.nl:hover::after{right:0}
+.burger{display:none;width:46px;height:46px;align-items:center;justify-content:center;border:1px solid rgba(251,248,241,.5);border-radius:999px;background:transparent;color:var(--ivory);cursor:pointer}
+.mnav{display:flex;flex-direction:column;padding-block:8px 28px;border-top:1px solid rgba(251,248,241,.12)}
+.mnav a{font-family:var(--f-display);font-size:36px;color:var(--ivory);text-decoration:none;padding:8px 0}
+
+/* Portada: foto enmarcada, no a sangre */
+.hero{background:var(--ivory);padding-block:20px 0}
+.frame{position:relative;max-width:1400px;margin:0 auto;min-height:clamp(520px,72vh,760px);border-radius:10px;overflow:hidden;background:var(--navy);color:var(--ivory);display:flex;align-items:flex-end}
+.hero-wrap{padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;animation:kb 18s cubic-bezier(.2,.6,.2,1) both}
+.frame .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,42,65,.05) 30%,rgba(27,42,65,.85) 100%)}
+.frame .in{position:relative;width:100%;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;padding:0 clamp(24px,5vw,64px) clamp(32px,5vw,64px)}
+.hero h1{margin:14px 0 0;font-family:var(--f-display);font-weight:400;font-size:clamp(42px,5.4vw,76px);line-height:1;letter-spacing:-.01em}
+.redbar{width:72px;height:3px;background:var(--red);margin-top:24px;transform-origin:left;animation:bar 1s cubic-bezier(.6,.1,.2,1) both .9s}
+.a1{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both .3s}
+.a2{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both .5s}
+.a3{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both .7s}
+
+/* Qué hacemos */
+.services{background:var(--ivory);padding-block:var(--space)}
+.services .lead{margin:0 auto clamp(56px,7vw,88px);max-width:820px;text-align:center;font-family:var(--f-display);font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.15}
+.services .lead em{color:var(--red);font-style:normal}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.card{display:flex;flex-direction:column;gap:22px;border:0;padding:0;background:none;text-align:left;cursor:pointer;color:var(--navy);font-family:var(--f-body)}
+.card .ph{display:block;width:100%;aspect-ratio:4/5;max-width:100%;overflow:hidden;border-radius:8px}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img{transform:scale(1.05)}
+.card .meta{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.card .name{font-family:var(--f-display);font-size:clamp(30px,2.6vw,40px);font-weight:500;line-height:1}
+.card .go{font-size:12px;letter-spacing:.24em;color:var(--muted);white-space:nowrap;transition:color .3s}
+.card:hover .go{color:var(--red)}
+.card .num{font-size:12px;letter-spacing:.3em;color:var(--red)}
+.swipe{display:none;justify-content:center;gap:8px;margin:24px 0 0}
+.swipe span{width:6px;height:6px;border-radius:99px;background:var(--line);transition:background .3s,width .3s}
+.swipe span.on{background:var(--red);width:22px}
+
+/* Detalle de servicio */
+.detail{background:var(--white);padding-block:var(--space)}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px}
+.head .kicker{display:block;font-size:12px;letter-spacing:.34em;color:var(--red);margin-bottom:10px}
+.head h2{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(46px,5.6vw,80px);line-height:1}
+.head h2 em{color:var(--red);font-style:normal}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(27,42,65,.3);background:transparent;color:var(--navy);font-family:var(--f-body);font-size:14px;letter-spacing:.04em;cursor:pointer;transition:all .25s}
+.chip:hover{border-color:var(--navy)}
+.chip[aria-pressed="true"]{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:260px;grid-auto-flow:dense;gap:24px}
+.t-wide{grid-column:span 2}.t-tall{grid-row:span 2}
+.tile{position:relative;overflow:hidden;border-radius:8px;display:block;text-decoration:none;color:var(--navy);animation:pop .6s cubic-bezier(.2,.7,.2,1) both}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.tile:hover img{transform:scale(1.05)}
+.tag{position:absolute;left:16px;bottom:16px;right:16px;display:flex;flex-direction:column;align-items:flex-start;pointer-events:none}
+.tag b{display:inline-block;background:var(--ivory);color:var(--navy);font-family:var(--f-display);font-weight:500;font-size:22px;line-height:1;padding:11px 15px 12px;border-radius:4px}
+.tag small{display:block;max-height:0;overflow:hidden;opacity:0;background:var(--navy);color:var(--ivory);font-size:13px;letter-spacing:.03em;padding:0 15px;border-radius:0 0 4px 4px;transition:max-height .4s,opacity .3s,padding .4s}
+.tile:hover .tag small,.tile:focus-visible .tag small{max-height:60px;opacity:1;padding:9px 15px}
+.cr{position:absolute;inset:0;display:flex;flex-direction:column;padding:32px}
+.cr .lab{font-size:12px;letter-spacing:.3em}
+.cr-navy{background:var(--navy);color:var(--ivory);justify-content:space-between}
+.cr-navy .top{display:flex;justify-content:space-between;align-items:center}
+.cr-navy .top i{width:11px;height:11px;border-radius:99px;background:var(--red)}
+.cr-navy .big{font-family:var(--f-display);font-size:clamp(48px,5vw,84px);line-height:.95;font-weight:500}
+.cr-navy .small{font-size:13px;letter-spacing:.08em;opacity:.8}
+.cr-red{background:var(--red);color:var(--ivory);justify-content:space-between}
+.cr-red .big{font-family:var(--f-display);font-style:italic;font-size:clamp(32px,3vw,46px);line-height:1}
+.cr-ivory{background:var(--ivory);color:var(--navy);justify-content:space-between}
+.cr-ivory .lab{color:var(--red)}
+.cr-ivory .big{font-family:var(--f-display);font-size:clamp(30px,2.8vw,42px);line-height:1.05}
+.detail .cta{display:flex;justify-content:center;margin-top:56px}
+/* Lista compacta (móvil) */
+.list{display:none;list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+.list a{display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--navy);animation:pop .5s cubic-bezier(.2,.7,.2,1) both}
+.list .th{flex:none;width:64px;height:64px;border-radius:6px;overflow:hidden;background:var(--navy)}
+.list .th img{width:100%;height:100%;object-fit:cover}
+.list .th.red{background:var(--red)}.list .th.ivory{background:var(--ivory);border:1px solid var(--line)}
+.list .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.list .tx b{font-family:var(--f-display);font-weight:500;font-size:24px;line-height:1.05}
+.list .tx small{font-size:13px;color:var(--muted)}
+.list .chev{flex:none;color:var(--red)}
+
+/* Somos MO */
+.about{background:var(--green);color:var(--ivory);padding-block:var(--space);text-align:center}
+.about h2{margin:0 0 20px;font-family:var(--f-display);font-weight:400;font-size:clamp(52px,6.5vw,92px);line-height:.95}
+.about p{margin:0 auto 36px;max-width:420px;font-size:18px;line-height:1.6;font-weight:300}
+.values{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 28px;margin:0 0 48px;padding:0;list-style:none;font-family:var(--f-display);font-size:clamp(24px,2.4vw,32px);font-style:italic}
+.values li{display:flex;align-items:center;gap:28px}
+.values li + li::before{content:"";width:6px;height:6px;border-radius:99px;background:var(--ivory);opacity:.6}
+
+/* Contacto */
+.contact{background:var(--navy);color:var(--ivory);padding-block:var(--space)}
+.contact .wrap{display:flex;flex-wrap:wrap;gap:clamp(48px,7vw,96px)}
+.contact .l{flex:1 1 340px;min-width:0}
+.contact .r{flex:1 1 440px;min-width:0}
+.contact h2{margin:0 0 36px;font-family:var(--f-display);font-weight:400;font-size:clamp(56px,7.5vw,104px);line-height:.92}
+.contact h2 span{color:var(--red)}
+.ways{display:flex;flex-direction:column;gap:4px;font-size:18px}
+.ways span,.ways a{padding:10px 0;text-decoration:none}
+form{display:flex;flex-direction:column;gap:26px}
+label,legend{display:flex;flex-direction:column;font-size:12px;letter-spacing:.2em;color:var(--soft)}
+legend{margin-bottom:12px}
+fieldset{border:0;margin:0;padding:0}
+.inp{width:100%;min-height:52px;border:0;border-bottom:1px solid rgba(251,248,241,.4);background:transparent;font-family:var(--f-body);font-size:17px;color:var(--ivory);padding:12px 0;outline:none;transition:border-color .3s;border-radius:0}
+.inp:focus{border-bottom-color:var(--ivory)}
+textarea.inp{resize:vertical}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(251,248,241,.45);background:transparent;color:var(--ivory);font-family:var(--f-body);font-size:14px;cursor:pointer;transition:all .25s}
+.opt:hover{border-color:var(--ivory)}
+.opt[aria-pressed="true"]{background:var(--ivory);color:var(--navy);border-color:var(--ivory)}
+.thanks p{margin:0 0 28px;font-family:var(--f-display);font-style:italic;font-size:52px;line-height:1}
+
+/* Pie */
+.foot{background:var(--navy);color:var(--ivory);border-top:1px solid rgba(251,248,241,.12)}
+.foot .wrap{padding-block:52px 34px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px}
+.foot .brand{display:flex;align-items:center;gap:16px}
+.foot .mo{font-size:48px}
+.foot nav{display:flex;flex-wrap:wrap;gap:28px}
+.foot .legal{margin:0;width:100%;padding-top:24px;border-top:1px solid rgba(251,248,241,.12);font-size:13px;color:#AEB6C2}
+
+/* Movimiento */
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes lift{from{transform:translateY(40px)}to{transform:none}}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pop{from{transform:translateY(20px)}to{transform:none}}
+@supports (animation-timeline: view()){.reveal{animation:lift linear both;animation-timeline:view();animation-range:entry 0% cover 20%}}
+
+@media (max-width:900px){
+  .nav{display:none}.burger{display:inline-flex}
+  /* Mosaico a dos columnas: primera pieza alta, última ancha, sin huecos */
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:220px;gap:16px}
+  .grid .tile{grid-column:auto;grid-row:auto}
+  .grid .m-tall{grid-row:span 2}
+  .grid .m-wide{grid-column:span 2}
+}
+@media (max-width:680px){
+  .hero{padding-block:12px 0}
+  .frame{min-height:480px;border-radius:8px}
+  /* Las tres áreas: tarjetas grandes que se deslizan con el dedo */
+  .cards{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(-1 * var(--gut-l));margin-right:calc(-1 * var(--gut-r));padding-left:var(--gut-l);padding-right:var(--gut-r);scroll-padding-left:var(--gut-l);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 78%;scroll-snap-align:start;gap:16px}
+  .card .ph{border-radius:8px}
+  .card .meta{padding-top:14px}
+  .card .go{font-size:11px}
+  .swipe{display:flex}
+  /* Mosaico en móvil */
+  .grid{grid-auto-rows:168px;gap:12px}
+  .tag{left:10px;right:10px;bottom:10px}
+  .tag b{font-size:17px;padding:9px 11px 10px}
+  .tag small{display:none}
+  .cr{padding:16px}
+  .cr .lab{font-size:10px;letter-spacing:.24em}
+  .cr-navy .big{font-size:44px}
+  .cr-navy .small{font-size:11px;letter-spacing:.04em}
+  .cr-red .big{font-size:26px}
+  .cr-ivory .big{font-size:22px}
+  .head{margin-bottom:28px}
+  .detail .cta{margin-top:36px}
+  .values li + li::before{display:none}
+  .values{flex-direction:column;gap:6px}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="MO Estudio, inicio">
+      <span class="mo">M<span>O</span></span><span class="sep"></span><span class="est">ESTUDIO</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a class="nl" href="#servicio" data-tab="0">MARKETING</a>
+      <a class="nl" href="#servicio" data-tab="1">COMUNICACIÓN</a>
+      <a class="nl" href="#servicio" data-tab="2">EVENTOS</a>
+      <a class="pill p-red" href="#contacto" style="min-height:44px;padding:0 22px">Contacto</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="8" y1="15" x2="20" y2="15"></line></svg>
+    </button>
+  </div>
+  <nav class="wrap mnav" id="mnav" aria-label="Menú móvil" hidden>
+    <a href="#servicio" data-tab="0">Marketing</a>
+    <a href="#servicio" data-tab="1">Comunicación</a>
+    <a href="#servicio" data-tab="2">Eventos</a>
+    <a href="#contacto"><em>Contacto</em></a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="hero-wrap">
+      <div class="frame">
+        <img src="images/portada.jpg?v=2" alt="Mesa de celebración con candelabros, velas y flores">
+        <div class="shade" aria-hidden="true"></div>
+        <div class="in">
+          <div>
+            <p class="eyebrow a1" style="margin:0">Marketing · Comunicación · Eventos</p>
+            <h1 class="a2">Cercanía <em>con criterio.</em></h1>
+            <div class="redbar" aria-hidden="true"></div>
+          </div>
+          <a class="pill p-red a3" href="#contacto">Hablemos <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicios" aria-label="Servicios">
+    <div class="wrap">
+      <p class="lead reveal">Que se vea, que se escuche,<br>que se viva<em>.</em></p>
+      <div class="cards">
+        <button class="card reveal" type="button" data-tab="0">
+          <span class="ph"><img src="images/marketing.jpg" alt=""></span>
+          <span class="meta"><span class="name">Marketing</span><span class="go">VER SERVICIOS ↓</span></span>
+        </button>
+        <button class="card reveal" type="button" data-tab="1">
+          <span class="ph"><img src="images/creadores.jpg" alt="" style="object-position:40% center"></span>
+          <span class="meta"><span class="name">Comunicación</span><span class="go">VER SERVICIOS ↓</span></span>
+        </button>
+        <button class="card reveal" type="button" data-tab="2">
+          <span class="ph"><img src="images/salon.jpg" alt="" style="object-position:30% center"></span>
+          <span class="meta"><span class="name">Eventos</span><span class="go">VER SERVICIOS ↓</span></span>
+        </button>
+      </div>
+      <p class="swipe" aria-hidden="true"><span></span><span></span><span></span></p>
+    </div>
+  </section>
+
+  <section class="detail" id="servicio" aria-live="polite">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="kicker" id="d-kicker">QUE SE VEA</span>
+          <h2 id="d-title">Marketing<em>.</em></h2>
+        </div>
+        <div class="chips" role="group" aria-label="Elegir servicio" id="chips">
+          <button class="chip" type="button" aria-pressed="true" data-tab="0">Marketing</button>
+          <button class="chip" type="button" aria-pressed="false" data-tab="1">Comunicación</button>
+          <button class="chip" type="button" aria-pressed="false" data-tab="2">Eventos</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <ul class="list" id="list"></ul>
+      <div class="cta"><a class="pill p-navy" href="#contacto" id="d-cta">Pedir propuesta <span class="arr" aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="about" id="nosotros">
+    <div class="wrap reveal">
+      <h2>Somos <em>MO.</em></h2>
+      <p>Un equipo pequeño, cercano y con criterio.</p>
+      <ul class="values"><li>Cercanía</li><li>Criterio</li><li>Confianza</li></ul>
+      <a class="pill p-line" href="#contacto">Tomemos un café <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <div class="l reveal">
+        <h2>Hablemos<span>.</span></h2>
+        <div class="ways">
+          <span>[EMAIL]</span>
+          <span>[TELÉFONO]</span>
+          <a href="#">WhatsApp →</a>
+        </div>
+      </div>
+      <div class="r reveal">
+        <form id="form" novalidate>
+          <label for="f-nombre">NOMBRE<input class="inp" id="f-nombre" type="text" name="nombre" autocomplete="name"></label>
+          <label for="f-email">EMAIL<input class="inp" id="f-email" type="email" name="email" autocomplete="email"></label>
+          <fieldset>
+            <legend>ME INTERESA</legend>
+            <div class="opts">
+              <button class="opt" type="button" aria-pressed="false">Marketing</button>
+              <button class="opt" type="button" aria-pressed="false">Comunicación</button>
+              <button class="opt" type="button" aria-pressed="false">Eventos</button>
+            </div>
+          </fieldset>
+          <label for="f-msg">MENSAJE<textarea class="inp" id="f-msg" name="mensaje" rows="3"></textarea></label>
+          <div><button class="pill p-red" type="submit">Enviar <span class="arr" aria-hidden="true">→</span></button></div>
+        </form>
+        <div class="thanks" id="thanks" hidden>
+          <p>¡Gracias!<br>Te escribimos pronto.</p>
+          <button class="pill p-line" type="button" id="again">Volver</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="brand"><span class="mo">M<span>O</span></span><span class="est">ESTUDIO</span></div>
+    <nav aria-label="Redes sociales">
+      <a class="nl" href="#">INSTAGRAM</a>
+      <a class="nl" href="#">LINKEDIN</a>
+      <a class="nl" href="#">TIKTOK</a>
+    </nav>
+    <p class="legal">© 2026 MO Estudio · Aviso legal · Privacidad · Cookies</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var SERVICES=[
+    {title:'Marketing',kicker:'QUE SE VEA',cta:'Pedir propuesta de marketing',tiles:[
+      {kind:'navy',span:'t-tall',lab:'BRANDING',big:'Obrim.',small:'Identidad y lanzamiento · Café Nòria',name:'Branding',sub:'Identidad, logo y tono de marca'},
+      {kind:'photo',span:'t-wide',img:'redes',name:'Publicidad en redes',sub:'Anuncios en Instagram, Facebook y Google'},
+      {kind:'photo',span:'',img:'web',name:'Diseño web',sub:'Webs claras y fáciles de usar'},
+      {kind:'red',span:'',lab:'CAMPAÑAS',big:'Verano, sin prisa.',name:'Campañas',sub:'Ideas que se recuerdan'},
+      {kind:'ivory',span:'',lab:'ESTRATEGIA',big:'Plan, objetivos y calendario.',name:'Estrategia',sub:'Saber qué hacer y cuándo'},
+      {kind:'photo',span:'t-wide',img:'diseno',name:'Diseño gráfico',sub:'Piezas para redes, carteles y papelería'}
+    ]},
+    {title:'Comunicación',kicker:'QUE SE ESCUCHE',cta:'Pedir propuesta de comunicación',tiles:[
+      {kind:'photo',span:'t-tall',img:'community',name:'Gestión de redes',sub:'Publicamos, respondemos y cuidamos tu comunidad'},
+      {kind:'photo',span:'t-wide',img:'contenido',name:'Contenido para redes',sub:'Fotos, reels y stories con tu estilo'},
+      {kind:'ivory',span:'',lab:'CORPORATIVA',big:'“Hablemos claro.”',name:'Comunicación corporativa',sub:'Mensajes claros para clientes y socios'},
+      {kind:'photo',span:'',img:'imagen',name:'Asesoría de imagen',sub:'Estilo y presencia para cada ocasión'},
+      {kind:'photo',span:'',img:'textos',name:'Textos y storytelling',sub:'Historias que conectan'},
+      {kind:'red',span:'t-wide',lab:'PRENSA Y MEDIOS',big:'Que hablen de ti.',name:'Prensa y medios',sub:'Notas de prensa y relación con medios'}
+    ]},
+    {title:'Eventos',kicker:'QUE SE VIVA',cta:'Pedir propuesta de evento',tiles:[
+      {kind:'photo',span:'t-tall',img:'bodas',name:'Bodas',sub:'De la idea al último detalle'},
+      {kind:'photo',span:'t-wide',img:'banquete',name:'Banquetes',sub:'Salones, menús y montaje'},
+      {kind:'photo',span:'',img:'flores',name:'Flores y ambientación',sub:'Decoración, luz y centros de mesa'},
+      {kind:'photo',span:'',img:'protocolo',name:'Protocolo y papelería',sub:'Invitaciones, seating y minutas'},
+      {kind:'red',span:'',lab:'FIESTAS LOCALES',big:'Festes majors.',name:'Fiestas locales',sub:'Programas, actos y cartelería'},
+      {kind:'ivory',span:'t-wide',lab:'CELEBRACIONES',big:'Comuniones, bautizos y aniversarios.',name:'Celebraciones',sub:'Comuniones, bautizos y aniversarios'}
+    ]}
+  ];
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  var grid=document.getElementById('grid'),list=document.getElementById('list'),chips=document.querySelectorAll('#chips .chip');
+  var current=-1;
+  function show(i){
+    if(i===current)return; current=i;
+    var s=SERVICES[i];
+    document.getElementById('d-title').innerHTML=esc(s.title)+'<em>.</em>';
+    document.getElementById('d-kicker').textContent=s.kicker;
+    document.getElementById('d-cta').innerHTML=esc(s.cta)+' <span class="arr" aria-hidden="true">→</span>';
+    chips.forEach(function(c){c.setAttribute('aria-pressed',String(+c.dataset.tab===i));});
+    grid.innerHTML='';list.innerHTML='';
+    s.tiles.forEach(function(t,k){
+      var m=k===0?' m-tall':(k===s.tiles.length-1?' m-wide':'');
+      var a=document.createElement('a');a.className='tile '+t.span+m;a.href='#contacto';a.setAttribute('aria-label',t.name+'. '+t.sub);a.style.animationDelay=(k*0.06)+'s';
+      var inner='';
+      if(t.kind==='photo') inner='<img src="images/'+t.img+'.jpg" alt=""><span class="tag"><b>'+esc(t.name)+'</b><small>'+esc(t.sub)+'</small></span>';
+      if(t.kind==='navy') inner='<span class="cr cr-navy"><span class="top"><span class="lab">'+esc(t.lab)+'</span><i></i></span><span class="big">'+esc(t.big)+'</span><span class="small">'+esc(t.small)+'</span></span>';
+      if(t.kind==='red') inner='<span class="cr cr-red"><span class="lab">'+esc(t.lab)+'</span><span class="big">'+esc(t.big)+'</span></span>';
+      if(t.kind==='ivory') inner='<span class="cr cr-ivory"><span class="lab">'+esc(t.lab)+'</span><span class="big">'+esc(t.big)+'</span></span>';
+      a.innerHTML=inner;grid.appendChild(a);
+      var li=document.createElement('li');
+      var th=t.kind==='photo'?'<span class="th"><img src="images/'+t.img+'.jpg" alt="" loading="lazy"></span>':'<span class="th '+(t.kind==='navy'?'':t.kind)+'"></span>';
+      li.innerHTML='<a href="#contacto" style="animation-delay:'+(k*0.05)+'s">'+th+'<span class="tx"><b>'+esc(t.name)+'</b><small>'+esc(t.sub)+'</small></span><span class="chev" aria-hidden="true">→</span></a>';
+      list.appendChild(li);
+    });
+  }
+  function goTo(i){show(i);document.getElementById('servicio').scrollIntoView({behavior:'smooth',block:'start'});}
+  chips.forEach(function(c){c.addEventListener('click',function(){show(+c.dataset.tab);});});
+  document.querySelectorAll('.card').forEach(function(b){b.addEventListener('click',function(){goTo(+b.dataset.tab);});});
+  document.querySelectorAll('header a[data-tab]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();closeMenu();goTo(+a.dataset.tab);});});
+  show(0);
+
+  var cardsEl=document.querySelector('.cards'),dots=document.querySelectorAll('.swipe span');
+  function syncDots(){
+    var cs=cardsEl.querySelectorAll('.card'),best=0,bd=1e9,left=cardsEl.getBoundingClientRect().left;
+    cs.forEach(function(c,i){var d=Math.abs(c.getBoundingClientRect().left-left);if(d<bd){bd=d;best=i;}});
+    dots.forEach(function(d,i){d.classList.toggle('on',i===best);});
+  }
+  cardsEl.addEventListener('scroll',function(){window.requestAnimationFrame(syncDots);},{passive:true});
+  syncDots();
+
+  var burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+  function closeMenu(){mnav.hidden=true;burger.setAttribute('aria-expanded','false');}
+  burger.addEventListener('click',function(){var open=mnav.hidden;mnav.hidden=!open;burger.setAttribute('aria-expanded',String(open));});
+  mnav.querySelectorAll('a:not([data-tab])').forEach(function(a){a.addEventListener('click',closeMenu);});
+
+  var form=document.getElementById('form'),thanks=document.getElementById('thanks');
+  form.querySelectorAll('.opt').forEach(function(o){o.addEventListener('click',function(){o.setAttribute('aria-pressed',o.getAttribute('aria-pressed')==='true'?'false':'true');});});
+  form.addEventListener('submit',function(e){e.preventDefault();form.hidden=true;thanks.hidden=false;});
+  document.getElementById('again').addEventListener('click',function(){form.reset();form.querySelectorAll('.opt').forEach(function(o){o.setAttribute('aria-pressed','false');});thanks.hidden=true;form.hidden=false;});
+})();
+</script>
+
+</body>
+</html>
