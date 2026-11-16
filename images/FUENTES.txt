@@ -1,0 +1,25 @@
+Fotos usadas en la web de MO Estudio
+
+1_tratadas_web: tal como aparecen en la web (tono azul marino, marfil y grano).
+2_originales_color: la foto original de cada una, en color y a mayor tamaño.
+
+Todas son de bancos gratuitos con licencia de uso comercial libre (no hace falta citar al autor):
+Pexels: https://www.pexels.com/license/   ·   Burst: https://burst.shopify.com/licenses
+
+ARCHIVO | DÓNDE SE USA | FUENTE
+
+portada.jpg | Portada | Pexels: https://www.pexels.com/photo/1128783/
+marketing.jpg | Tarjeta Marketing | Pexels: https://www.pexels.com/photo/3740393/
+creadores.jpg | Tarjeta Comunicación | Pexels: https://www.pexels.com/photo/6954174/
+salon.jpg | Tarjeta Eventos | Pexels: https://www.pexels.com/photo/1616113/
+redes.jpg | Marketing · Publicidad en redes | Pexels: https://www.pexels.com/photo/3585088/
+web.jpg | Marketing · Diseño web | Pexels: https://www.pexels.com/photo/196644/
+diseno.jpg | Marketing · Diseño gráfico | Pexels: https://www.pexels.com/photo/53874/
+community.jpg | Comunicación · Gestión de redes | Burst (Shopify): https://burst.shopify.com/photos/woman-holding-phone-browsing-social-media
+contenido.jpg | Comunicación · Contenido para redes | Pexels: https://www.pexels.com/photo/4549411/
+imagen.jpg | Comunicación · Asesoría de imagen | Pexels: https://www.pexels.com/photo/3065209/
+textos.jpg | Comunicación · Textos y storytelling | Pexels: https://www.pexels.com/photo/4065400/
+bodas.jpg | Eventos · Bodas | Pexels: https://www.pexels.com/photo/2959192/
+banquete.jpg | Eventos · Banquetes | Pexels: https://www.pexels.com/photo/2306281/
+flores.jpg | Eventos · Flores y ambientación | Pexels: https://www.pexels.com/photo/169190/
+protocolo.jpg | Eventos · Protocolo y papelería | Pexels: https://www.pexels.com/photo/17001821/
