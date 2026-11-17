@@ -166,6 +166,8 @@ legend{margin-bottom:12px}
 fieldset{border:0;margin:0;padding:0}
 .inp{width:100%;min-height:52px;border:0;border-bottom:1px solid rgba(251,248,241,.4);background:transparent;font-family:var(--f-body);font-size:17px;color:var(--ivory);padding:12px 0;outline:none;transition:border-color .3s;border-radius:0}
 .inp:focus{border-bottom-color:var(--ivory)}
+.inp:user-invalid{border-bottom-color:#E8A0A8}
+.req-note{margin:-8px 0 0;font-size:12px;letter-spacing:.06em;color:var(--soft)}
 textarea.inp{resize:vertical}
 .opts{display:flex;flex-wrap:wrap;gap:10px}
 .opt{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(251,248,241,.45);background:transparent;color:var(--ivory);font-family:var(--f-body);font-size:14px;cursor:pointer;transition:all .25s}
@@ -336,12 +338,13 @@ textarea.inp{resize:vertical}
         </div>
       </div>
       <div class="r reveal">
-        <form id="form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="web-url" novalidate>
+        <form id="form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="web-url">
           <input type="hidden" name="form-name" value="contacto">
           <input type="hidden" name="intereses" id="f-intereses" value="">
           <p hidden><label>No rellenar<input name="web-url"></label></p>
-          <label for="f-nombre">NOMBRE<input class="inp" id="f-nombre" type="text" name="nombre" autocomplete="name"></label>
-          <label for="f-email">EMAIL<input class="inp" id="f-email" type="email" name="email" autocomplete="email"></label>
+          <label for="f-nombre">NOMBRE *<input class="inp" id="f-nombre" type="text" name="nombre" autocomplete="name" required></label>
+          <label for="f-email">EMAIL *<input class="inp" id="f-email" type="email" name="email" autocomplete="email" required></label>
+          <label for="f-tel">TELÉFONO *<input class="inp" id="f-tel" type="tel" name="telefono" autocomplete="tel" inputmode="tel" pattern="[0-9 +()\-]{9,}" title="Escribe un teléfono de al menos 9 cifras" required></label>
           <fieldset>
             <legend>ME INTERESA</legend>
             <div class="opts">
@@ -351,6 +354,7 @@ textarea.inp{resize:vertical}
             </div>
           </fieldset>
           <label for="f-msg">MENSAJE<textarea class="inp" id="f-msg" name="mensaje" rows="3"></textarea></label>
+          <p class="req-note">* Campos obligatorios</p>
           <div><button class="pill p-red" type="submit">Enviar <span class="arr" aria-hidden="true">→</span></button></div>
         </form>
         <div class="thanks" id="thanks" hidden>
