@@ -378,6 +378,8 @@ textarea.inp{resize:vertical}
 
 <script>
 (function(){
+  // Clave pública de Web3Forms (aviso por correo del formulario). Vacía = solo Netlify Forms.
+  var W3F_KEY='';
   var SERVICES=[
     {title:'Marketing',kicker:'QUE SE VEA',cta:'Pedir propuesta de marketing',tiles:[
       {kind:'navy',span:'t-tall',lab:'BRANDING',big:'Obrim.',small:'Identidad y lanzamiento · Café Nòria',name:'Branding',sub:'Identidad, logo y tono de marca'},
@@ -459,8 +461,17 @@ textarea.inp{resize:vertical}
     var sel=[];form.querySelectorAll('.opt[aria-pressed="true"]').forEach(function(o){sel.push(o.textContent);});
     document.getElementById('f-intereses').value=sel.join(', ');
     var btn=form.querySelector('button[type="submit"]');btn.disabled=true;
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
-      .then(function(r){if(!r.ok)throw new Error(r.status);form.hidden=true;thanks.hidden=false;})
+    var data=new FormData(form);
+    // 1) Netlify Forms: guarda el mensaje en el panel de Netlify.
+    var toNetlify=fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()});
+    // 2) Web3Forms (gratuito, 250 envíos/mes): manda el aviso por correo a hola@hacemosmo.es.
+    var toMail=W3F_KEY?fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({
+      access_key:W3F_KEY,subject:'Nuevo contacto desde hacemosmo.es',from_name:'Web MO Estudio',
+      name:data.get('nombre'),email:data.get('email'),replyto:data.get('email'),
+      'Teléfono':data.get('telefono'),'Le interesa':data.get('intereses')||'—','Mensaje':data.get('mensaje')||'—'
+    })}):Promise.resolve({ok:true});
+    Promise.allSettled([toNetlify,toMail])
+      .then(function(rs){var ok=rs.some(function(x){return x.status==='fulfilled'&&x.value.ok;});if(!ok)throw new Error('envio');form.hidden=true;thanks.hidden=false;})
       .catch(function(){alert('No se ha podido enviar. Escríbenos a hola@hacemosmo.es');})
       .finally(function(){btn.disabled=false;});
   });
