@@ -23,7 +23,7 @@ Dominio: https://hacemosmo.es (principal) y www.hacemosmo.es.
 - Tono: sobrio, elegante, clásico, cercano y serio. Nada de textos vulgares ni de "nuestros servicios".
 
 ## Reglas
-- No publicar el teléfono personal de Diego ni su WhatsApp. Contacto público: hola@hacemosmo.es e Instagram @hacemosmo.
+- Contacto público: hola@hacemosmo.es, teléfono 606 26 57 07 (publicado a petición expresa, 17/11/2026) e Instagram @hacemosmo. No añadir WhatsApp salvo que se pida.
 - No publicar casos o clientes inventados como si fueran reales.
 - Mientras la web esté en construcción se mantiene `<meta name="robots" content="noindex">`; quitarlo solo al lanzar.
 - DNS en OVH (no en Netlify): A `@` → 75.2.60.5, CNAME `www` → hacemosmo.netlify.app. No tocar MX, SPF, DKIM, DMARC ni SRV del correo.
