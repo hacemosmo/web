@@ -6,3 +6,22 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# Archivos internos del repositorio que no deben servirse en la web
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/"
+  status = 404
+  force = true
