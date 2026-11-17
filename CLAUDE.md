@@ -15,7 +15,7 @@ Dominio: https://hacemosmo.es (principal) y www.hacemosmo.es.
 - `index.html`: página única (HTML + CSS + JS en el mismo archivo).
 - `images/`: fotos ya tratadas (tono marino/marfil). Fuentes y licencias en `images/FUENTES.txt`
   (Pexels/Burst, uso comercial libre). Optimizar antes de subir: JPEG progresivo, calidad ~80, lado mayor ≤1600 px (portada ≤2200 px).
-- Formulario de contacto: Netlify Forms, formulario `contacto`.
+- Formulario de contacto: doble envío. Netlify Forms (formulario `contacto`, guarda copia en el panel) + Web3Forms (plan gratuito, 250 envíos/mes; avisa por correo; clave pública en `W3F_KEY` dentro de `index.html`, formulario "Contacto web MO" en la cuenta hacemosmo@gmail.com). Los avisos de correo de Netlify son de pago: no usarlos.
 
 ## Marca
 - Colores: azul marino #1B2A41, rojo #7A1F2B, marfil #FBF8F1, blanco. El verde #2F4538 solo de forma puntual.
