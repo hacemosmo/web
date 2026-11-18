@@ -1,0 +1,5 @@
+# GitHub Pages: archivos del repositorio que no se publican en la web
+exclude:
+  - CLAUDE.md
+  - README.md
+  - netlify.toml
