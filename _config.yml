@@ -2,4 +2,3 @@
 exclude:
   - CLAUDE.md
   - README.md
-  - netlify.toml

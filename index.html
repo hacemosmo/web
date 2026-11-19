@@ -4,12 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MO Estudio · Marketing, Comunicación y Eventos</title>
-<meta name="description" content="MO Estudio: marketing, comunicación y eventos. Cercanía con criterio.">
-<!-- Web en construcción: se retira el noindex al publicar la versión final -->
-<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="MO Estudio: marketing, comunicación y eventos. Branding, gestión de redes, contenido, bodas y celebraciones. Cercanía con criterio.">
+<link rel="canonical" href="https://hacemosmo.es/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="MO Estudio">
+<meta property="og:title" content="MO Estudio · Marketing, Comunicación y Eventos">
+<meta property="og:description" content="Cercanía con criterio. Que se vea, que se escuche, que se viva.">
+<meta property="og:url" content="https://hacemosmo.es/">
+<meta property="og:image" content="https://hacemosmo.es/images/compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1B2A41">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap">
 <style>
 /* Layout: mucho aire. Las fotos van enmarcadas y separadas, nunca pegadas entre sí; cada sección respira con su propio fondo. */
 :root{
@@ -24,7 +35,7 @@
   --line:rgba(27,42,65,.14);
   --line-light:rgba(251,248,241,.22);
   --f-display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --f-body:'Jost','Helvetica Neue',Arial,sans-serif;
+  --f-body:'Montserrat','Helvetica Neue',Arial,sans-serif;
   --wrap:1240px;
   --gut-l:max(20px, env(safe-area-inset-left, 0px));
   --gut-r:max(20px, env(safe-area-inset-right, 0px));
@@ -167,6 +178,10 @@ fieldset{border:0;margin:0;padding:0}
 .inp{width:100%;min-height:52px;border:0;border-bottom:1px solid rgba(251,248,241,.4);background:transparent;font-family:var(--f-body);font-size:17px;color:var(--ivory);padding:12px 0;outline:none;transition:border-color .3s;border-radius:0}
 .inp:focus{border-bottom-color:var(--ivory)}
 .inp:user-invalid{border-bottom-color:#E8A0A8}
+.consent{flex-direction:row;align-items:flex-start;gap:12px;font-size:13px;letter-spacing:.02em;line-height:1.5;color:var(--soft)}
+.consent input{flex:none;width:18px;height:18px;margin:2px 0 0;accent-color:var(--red)}
+.consent a{color:var(--ivory)}
+.foot .legal a{color:inherit}
 .req-note{margin:-8px 0 0;font-size:12px;letter-spacing:.06em;color:var(--soft)}
 textarea.inp{resize:vertical}
 .opts{display:flex;flex-wrap:wrap;gap:10px}
@@ -353,6 +368,7 @@ textarea.inp{resize:vertical}
             </div>
           </fieldset>
           <label for="f-msg">MENSAJE<textarea class="inp" id="f-msg" name="mensaje" rows="3"></textarea></label>
+          <label class="consent" for="f-ok"><input id="f-ok" type="checkbox" name="privacidad" required><span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Usaremos tus datos solo para responderte. *</span></label>
           <p class="req-note">* Campos obligatorios</p>
           <div><button class="pill p-red" type="submit">Enviar <span class="arr" aria-hidden="true">→</span></button></div>
         </form>
@@ -371,7 +387,7 @@ textarea.inp{resize:vertical}
     <nav aria-label="Redes sociales">
       <a class="social" href="https://www.instagram.com/hacemosmo/" target="_blank" rel="noopener" aria-label="Instagram de MO Estudio (@hacemosmo)"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg><span>@hacemosmo</span></a>
     </nav>
-    <p class="legal">© 2026 MO Estudio · Aviso legal · Privacidad · Cookies</p>
+    <p class="legal">© 2026 MO Estudio · <a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></p>
   </div>
 </footer>
 
@@ -381,10 +397,10 @@ textarea.inp{resize:vertical}
   var W3F_KEY='37276fc9-ec9d-4f8a-b756-8f8f811b89de';
   var SERVICES=[
     {title:'Marketing',kicker:'QUE SE VEA',cta:'Pedir propuesta de marketing',tiles:[
-      {kind:'navy',span:'t-tall',lab:'BRANDING',big:'Obrim.',small:'Identidad y lanzamiento · Café Nòria',name:'Branding',sub:'Identidad, logo y tono de marca'},
+      {kind:'navy',span:'t-tall',lab:'BRANDING',big:'Identidad.',small:'Logotipo · Paleta · Tono de marca',name:'Branding',sub:'Identidad, logo y tono de marca'},
       {kind:'photo',span:'t-wide',img:'redes',name:'Publicidad en redes',sub:'Anuncios en Instagram, Facebook y Google'},
       {kind:'photo',span:'',img:'web',name:'Diseño web',sub:'Webs claras y fáciles de usar'},
-      {kind:'red',span:'',lab:'CAMPAÑAS',big:'Verano, sin prisa.',name:'Campañas',sub:'Ideas que se recuerdan'},
+      {kind:'red',span:'',lab:'CAMPAÑAS',big:'Con intención.',name:'Campañas',sub:'Ideas que se recuerdan'},
       {kind:'ivory',span:'',lab:'ESTRATEGIA',big:'Plan, objetivos y calendario.',name:'Estrategia',sub:'Saber qué hacer y cuándo'},
       {kind:'photo',span:'t-wide',img:'diseno',name:'Diseño gráfico',sub:'Piezas para redes, carteles y papelería'}
     ]},
@@ -401,7 +417,7 @@ textarea.inp{resize:vertical}
       {kind:'photo',span:'t-wide',img:'banquete',name:'Banquetes',sub:'Salones, menús y montaje'},
       {kind:'photo',span:'',img:'flores',name:'Flores y ambientación',sub:'Decoración, luz y centros de mesa'},
       {kind:'photo',span:'',img:'protocolo',name:'Protocolo y papelería',sub:'Invitaciones, seating y minutas'},
-      {kind:'red',span:'',lab:'FIESTAS LOCALES',big:'Festes majors.',name:'Fiestas locales',sub:'Programas, actos y cartelería'},
+      {kind:'red',span:'',lab:'FIESTAS LOCALES',big:'Fiestas que unen.',name:'Fiestas locales',sub:'Programas, actos y cartelería'},
       {kind:'ivory',span:'t-wide',lab:'CELEBRACIONES',big:'Comuniones, bautizos y aniversarios.',name:'Celebraciones',sub:'Comuniones, bautizos y aniversarios'}
     ]}
   ];
